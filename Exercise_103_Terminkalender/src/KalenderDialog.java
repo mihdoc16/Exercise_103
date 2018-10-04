@@ -1,3 +1,6 @@
+
+import javax.swing.JButton;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,6 +13,9 @@
  */
 public class KalenderDialog extends javax.swing.JDialog {
 
+    private boolean ok;
+    private Appointment appointment;
+
     /**
      * Creates new form KalenderDialog
      */
@@ -18,6 +24,15 @@ public class KalenderDialog extends javax.swing.JDialog {
         initComponents();
     }
 
+    
+    public boolean isOk() {
+        return ok;
+    }
+
+    public Appointment getAppointment() {
+        return appointment;
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -63,8 +78,18 @@ public class KalenderDialog extends javax.swing.JDialog {
         jLabel6.setText("Text:");
 
         btÜbernehmen.setText("übernehmen");
+        btÜbernehmen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btÜbernehmenActionPerformed(evt);
+            }
+        });
 
         btAbbrechen.setText("abbrechen");
+        btAbbrechen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btAbbrechenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -127,6 +152,18 @@ public class KalenderDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btÜbernehmenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btÜbernehmenActionPerformed
+        Appointment appointment = new Appointment(Integer.parseInt(tfTag.getText()),Integer.parseInt(tfMonat.getText()),Integer.parseInt(tfJahr.getText()),Integer.parseInt(tfStunde.getText()),Integer.parseInt(tfMinute.getText()),tfText.getText());
+        
+        ok = true;
+        this.dispose();
+    }//GEN-LAST:event_btÜbernehmenActionPerformed
+
+    private void btAbbrechenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAbbrechenActionPerformed
+        ok = false;
+        this.dispose();
+    }//GEN-LAST:event_btAbbrechenActionPerformed
 
     /**
      * @param args the command line arguments

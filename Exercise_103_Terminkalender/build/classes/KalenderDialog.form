@@ -135,6 +135,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="&#xfc;bernehmen"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bt&#xdc;bernehmenActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="tfTag">
     </Component>
@@ -152,6 +155,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="abbrechen"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btAbbrechenActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

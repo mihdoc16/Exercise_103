@@ -17,7 +17,8 @@ public class KalenderGUI extends javax.swing.JFrame {
     public KalenderGUI() {
         initComponents();
         
-        
+        list.setModel(bl);
+        bl.add(new Appointment(10,10,10,10,10,"Hi"));
     }
 
     /**
@@ -38,9 +39,19 @@ public class KalenderGUI extends javax.swing.JFrame {
         list = new javax.swing.JList<>();
 
         miHinzufügen.setText("HInzufügen");
+        miHinzufügen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miHinzufügenActionPerformed(evt);
+            }
+        });
         pmPopup.add(miHinzufügen);
 
         miLöschen.setText("Löschen");
+        miLöschen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miLöschenActionPerformed(evt);
+            }
+        });
         pmPopup.add(miLöschen);
 
         miAendern.setText("Ändern");
@@ -77,6 +88,21 @@ public class KalenderGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void miHinzufügenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miHinzufügenActionPerformed
+        KalenderDialog kl = new KalenderDialog(this,true);
+        kl.setVisible(true);
+        
+        if(kl.isOk()){
+            Appointment a = kl.getAppointment();
+            bl.add(a);
+        }
+    }//GEN-LAST:event_miHinzufügenActionPerformed
+
+    private void miLöschenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miLöschenActionPerformed
+        int i = list.getSelectedIndex();
+        bl.delete(i);
+    }//GEN-LAST:event_miLöschenActionPerformed
 
     /**
      * @param args the command line arguments

@@ -12,11 +12,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="HInzuf&#xfc;gen"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miHinzuf&#xfc;genActionPerformed"/>
+          </Events>
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="miL&#xf6;schen">
           <Properties>
             <Property name="text" type="java.lang.String" value="L&#xf6;schen"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miL&#xf6;schenActionPerformed"/>
+          </Events>
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="miAendern">
           <Properties>
