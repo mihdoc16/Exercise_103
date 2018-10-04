@@ -31,6 +31,16 @@ public class AppointmentModell extends AbstractListModel{
         fireContentsChanged(this, 0, appointments.size()-1);
     }
     
+//    public void change(Appointment neu, Appointment alt){
+//        alt.setTag(neu.getTag());
+//        alt.setMonat(neu.getMonat());
+//        alt.setJahr(neu.getJahr());
+//        alt.setStunde(neu.getStunde());
+//        alt.setMinute(neu.getMinute());
+//        alt.setText(neu.getText());
+//        fireContentsChanged(this, 0, appointments.size()-1);
+//    }
+    
     public void save(File f) throws Exception{
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
         

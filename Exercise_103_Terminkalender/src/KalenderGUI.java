@@ -29,7 +29,8 @@ public class KalenderGUI extends javax.swing.JFrame {
         catch(Exception e){
             e.printStackTrace();
         }
-        bl.add(new Appointment(10,10,10,10,10,"Hi"));
+//        bl.add(new Appointment(10,10,10,10,10,"Hi"));
+//        bl.add(new Appointment(10,10,10,10,10,"Hallo"));
     }
 
     /**
@@ -46,12 +47,11 @@ public class KalenderGUI extends javax.swing.JFrame {
         miLöschen = new javax.swing.JMenuItem();
         miAendern = new javax.swing.JMenuItem();
         miSave = new javax.swing.JMenuItem();
-        miLoad = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         list = new javax.swing.JList<>();
 
-        miHinzufügen.setText("HInzufügen");
+        miHinzufügen.setText("Hinzufügen");
         miHinzufügen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 miHinzufügenActionPerformed(evt);
@@ -68,6 +68,11 @@ public class KalenderGUI extends javax.swing.JFrame {
         pmPopup.add(miLöschen);
 
         miAendern.setText("Ändern");
+        miAendern.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miAendernActionPerformed(evt);
+            }
+        });
         pmPopup.add(miAendern);
 
         miSave.setText("Save");
@@ -77,14 +82,6 @@ public class KalenderGUI extends javax.swing.JFrame {
             }
         });
         pmPopup.add(miSave);
-
-        miLoad.setText("Load");
-        miLoad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                miLoadActionPerformed(evt);
-            }
-        });
-        pmPopup.add(miLoad);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -142,9 +139,18 @@ public class KalenderGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_miSaveActionPerformed
 
-    private void miLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miLoadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_miLoadActionPerformed
+    private void miAendernActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miAendernActionPerformed
+       KalenderDialog kl = new KalenderDialog(this,true);
+       kl.setVisible(true);
+       
+       if(kl.isOk()){
+           Appointment alt = (Appointment) bl.getElementAt(list.getSelectedIndex());
+           Appointment neu = kl.getAppointment();
+//           bl.change(neu, alt);
+           bl.delete(list.getSelectedIndex());
+           bl.add(neu);
+       }
+    }//GEN-LAST:event_miAendernActionPerformed
 
     /**
      * @param args the command line arguments
@@ -187,7 +193,6 @@ public class KalenderGUI extends javax.swing.JFrame {
     private javax.swing.JList<String> list;
     private javax.swing.JMenuItem miAendern;
     private javax.swing.JMenuItem miHinzufügen;
-    private javax.swing.JMenuItem miLoad;
     private javax.swing.JMenuItem miLöschen;
     private javax.swing.JMenuItem miSave;
     private javax.swing.JPopupMenu pmPopup;

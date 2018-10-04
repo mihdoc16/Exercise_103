@@ -14,7 +14,7 @@ import javax.swing.JButton;
 public class KalenderDialog extends javax.swing.JDialog {
 
     private boolean ok;
-    private Appointment appointment;
+    private Appointment app;
 
     /**
      * Creates new form KalenderDialog
@@ -30,7 +30,7 @@ public class KalenderDialog extends javax.swing.JDialog {
     }
 
     public Appointment getAppointment() {
-        return appointment;
+        return app;
     }
     
     /**
@@ -154,7 +154,7 @@ public class KalenderDialog extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btÜbernehmenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btÜbernehmenActionPerformed
-        Appointment appointment = new Appointment(Integer.parseInt(tfTag.getText()),Integer.parseInt(tfMonat.getText()),Integer.parseInt(tfJahr.getText()),Integer.parseInt(tfStunde.getText()),Integer.parseInt(tfMinute.getText()),tfText.getText());
+        app = new Appointment(Integer.parseInt(tfTag.getText()),Integer.parseInt(tfMonat.getText()),Integer.parseInt(tfJahr.getText()),Integer.parseInt(tfStunde.getText()),Integer.parseInt(tfMinute.getText()),tfText.getText());
         
         ok = true;
         this.dispose();

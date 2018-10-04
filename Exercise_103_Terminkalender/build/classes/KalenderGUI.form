@@ -10,7 +10,7 @@
       <SubComponents>
         <MenuItem class="javax.swing.JMenuItem" name="miHinzuf&#xfc;gen">
           <Properties>
-            <Property name="text" type="java.lang.String" value="HInzuf&#xfc;gen"/>
+            <Property name="text" type="java.lang.String" value="Hinzuf&#xfc;gen"/>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miHinzuf&#xfc;genActionPerformed"/>
@@ -28,6 +28,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xc4;ndern"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miAendernActionPerformed"/>
+          </Events>
         </MenuItem>
         <MenuItem class="javax.swing.JMenuItem" name="miSave">
           <Properties>
@@ -35,14 +38,6 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miSaveActionPerformed"/>
-          </Events>
-        </MenuItem>
-        <MenuItem class="javax.swing.JMenuItem" name="miLoad">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Load"/>
-          </Properties>
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="miLoadActionPerformed"/>
           </Events>
         </MenuItem>
       </SubComponents>
