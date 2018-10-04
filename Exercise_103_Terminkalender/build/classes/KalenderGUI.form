@@ -8,9 +8,19 @@
         <Property name="useNullLayout" type="boolean" value="true"/>
       </Layout>
       <SubComponents>
-        <MenuItem class="javax.swing.JMenuItem" name="Hinzuf&#xfc;gen">
+        <MenuItem class="javax.swing.JMenuItem" name="miHinzuf&#xfc;gen">
           <Properties>
-            <Property name="text" type="java.lang.String" value="jMenuItem1"/>
+            <Property name="text" type="java.lang.String" value="HInzuf&#xfc;gen"/>
+          </Properties>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="miL&#xf6;schen">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="L&#xf6;schen"/>
+          </Properties>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="miAendern">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xc4;ndern"/>
           </Properties>
         </MenuItem>
       </SubComponents>

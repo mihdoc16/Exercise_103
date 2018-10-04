@@ -10,11 +10,14 @@
  */
 public class KalenderGUI extends javax.swing.JFrame {
 
+    AppointmentModell bl = new AppointmentModell();
     /**
      * Creates new form KalenderGUI
      */
     public KalenderGUI() {
         initComponents();
+        
+        
     }
 
     /**
@@ -27,13 +30,21 @@ public class KalenderGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         pmPopup = new javax.swing.JPopupMenu();
-        Hinzufügen = new javax.swing.JMenuItem();
+        miHinzufügen = new javax.swing.JMenuItem();
+        miLöschen = new javax.swing.JMenuItem();
+        miAendern = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         list = new javax.swing.JList<>();
 
-        Hinzufügen.setText("jMenuItem1");
-        pmPopup.add(Hinzufügen);
+        miHinzufügen.setText("HInzufügen");
+        pmPopup.add(miHinzufügen);
+
+        miLöschen.setText("Löschen");
+        pmPopup.add(miLöschen);
+
+        miAendern.setText("Ändern");
+        pmPopup.add(miAendern);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,10 +114,12 @@ public class KalenderGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem Hinzufügen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> list;
+    private javax.swing.JMenuItem miAendern;
+    private javax.swing.JMenuItem miHinzufügen;
+    private javax.swing.JMenuItem miLöschen;
     private javax.swing.JPopupMenu pmPopup;
     // End of variables declaration//GEN-END:variables
 }
