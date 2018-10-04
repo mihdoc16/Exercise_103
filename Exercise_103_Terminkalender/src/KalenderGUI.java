@@ -1,3 +1,6 @@
+
+import java.io.File;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,6 +21,14 @@ public class KalenderGUI extends javax.swing.JFrame {
         initComponents();
         
         list.setModel(bl);
+        File f = new File("./appointments.bin");
+        
+        try{
+           bl.load(f);   
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
         bl.add(new Appointment(10,10,10,10,10,"Hi"));
     }
 
@@ -34,6 +45,8 @@ public class KalenderGUI extends javax.swing.JFrame {
         miHinzufügen = new javax.swing.JMenuItem();
         miLöschen = new javax.swing.JMenuItem();
         miAendern = new javax.swing.JMenuItem();
+        miSave = new javax.swing.JMenuItem();
+        miLoad = new javax.swing.JMenuItem();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         list = new javax.swing.JList<>();
@@ -56,6 +69,22 @@ public class KalenderGUI extends javax.swing.JFrame {
 
         miAendern.setText("Ändern");
         pmPopup.add(miAendern);
+
+        miSave.setText("Save");
+        miSave.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSaveActionPerformed(evt);
+            }
+        });
+        pmPopup.add(miSave);
+
+        miLoad.setText("Load");
+        miLoad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miLoadActionPerformed(evt);
+            }
+        });
+        pmPopup.add(miLoad);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -104,6 +133,19 @@ public class KalenderGUI extends javax.swing.JFrame {
         bl.delete(i);
     }//GEN-LAST:event_miLöschenActionPerformed
 
+    private void miSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSaveActionPerformed
+        try{
+            bl.save(new File("./appointments.bin"));
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+    }//GEN-LAST:event_miSaveActionPerformed
+
+    private void miLoadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miLoadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_miLoadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -145,7 +187,9 @@ public class KalenderGUI extends javax.swing.JFrame {
     private javax.swing.JList<String> list;
     private javax.swing.JMenuItem miAendern;
     private javax.swing.JMenuItem miHinzufügen;
+    private javax.swing.JMenuItem miLoad;
     private javax.swing.JMenuItem miLöschen;
+    private javax.swing.JMenuItem miSave;
     private javax.swing.JPopupMenu pmPopup;
     // End of variables declaration//GEN-END:variables
 }
